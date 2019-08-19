@@ -9,6 +9,7 @@ import { FETCH_HOUSES_START,
 const initialState = {
     houses: null, 
     sort: null,
+    points: 0,
     error: "", 
     loading: false,
 }
@@ -55,6 +56,21 @@ const reducer = (state=initialState, action) => {
                 ...state, 
                 error: "",
                 loading: false,
+                sort: action.payload
+            }
+        case "ADD_POINTS":
+            return {
+                ...state, 
+                points: 0,
+            }
+        case "REMOVE_POINTS":
+            return {
+                ...state,
+                points: 0, 
+            }
+        case "SORT_HOUSE":
+            return {
+                ...state,
                 sort: action.payload
             }
         default:

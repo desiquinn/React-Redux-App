@@ -3,18 +3,19 @@ import { connect } from 'react-redux';
 import { getHouses, getSortingHat, addPoints, removePoints, sortHouse } from './actions/actions.js'
 
 // import House from './components/House.js';
-// import SortingHat from './components/SortingHat.js';
+import SortingHat from './components/SortingHat.js';
 
 import './App.css';
 
 function App(props) {
 
   console.log('App props:', props);
+  const {getHouses, getSortingHat, addPoints, removePoints, sortHouse} = props
 
   return (
     <div className="App">
-      {/* <House />
-      <SortingHat /> */}
+      {/* <House /> */}
+      <SortingHat getSortingHat={getSortingHat} sortHouse={sortHouse}/>
     </div>
   );
 }

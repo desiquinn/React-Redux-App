@@ -47,18 +47,21 @@ export const getSortingHat = () => {
 
 export const addPoints = house => {
     return {
-        type: 'ADD_POINTS',
+       type: "ADD_POINTS",
+       payload: house
     };
 };
 
 export const removePoints = house => {
     return {
-        type: 'REMOVE_POINTS',
+        type: "REMOVE_POINTS",
+        payload: house
     };
 };
 
 export const sortHouse = house => {
     return{
-        type: 'SORT_HOUSE',
+        type: "SORT_HOUSE",
+        payload: house
     };
 };
