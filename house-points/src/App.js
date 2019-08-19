@@ -1,30 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPoints, removePoints, sortHouse } from './actions/actions.js'
+import { getHouses, getSortingHat, addPoints, removePoints, sortHouse } from './actions/actions.js'
 
-import House from './components/House.js';
-import SortingHat from './components/SortingHat.js';
+// import House from './components/House.js';
+// import SortingHat from './components/SortingHat.js';
 
 import './App.css';
 
 function App(props) {
 
   console.log('App props:', props);
-  const {state} = props;
-  console.log('State', state);
 
   return (
     <div className="App">
-      <House />
-      <SortingHat />
+      {/* <House />
+      <SortingHat /> */}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
   return{
-    state,
+    houses: state.houses,
+    sort: state.sort, 
+    error: state.error,
+    loading: state.loading,
   };
 };
 
-export default connect(mapStateToProps, {addPoints, removePoints, sortHouse}) (App);
+export default connect(mapStateToProps, {getHouses, getSortingHat, addPoints, removePoints, sortHouse}) (App);
